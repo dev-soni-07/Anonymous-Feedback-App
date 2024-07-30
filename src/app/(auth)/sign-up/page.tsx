@@ -22,7 +22,7 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signUpSchema } from '@/schemas/signUp.schema';
 
-const page = () => {
+const SignUpForm = () => {
     const [username, setUsername] = useState("");
     const [usernameMessage, setUsernameMessage] = useState("");
     const [isCheckingUsername, setIsCheckingUsername] = useState(false);
@@ -180,4 +180,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default SignUpForm;
