@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     if (token &&
         (
             url.pathname.startsWith('/login') ||
-            url.pathname.startsWith('/signup') ||
+            url.pathname.startsWith('/sign-up') ||
             url.pathname.startsWith('/verify') ||
             url.pathname.startsWith('/')
         )
@@ -30,7 +30,7 @@ export const config = {
     matcher: [
         '/',
         '/login',
-        '/signup',
+        '/sign-up',
         '/dashboard/:path*',
         '/verify/:path*',
     ]
