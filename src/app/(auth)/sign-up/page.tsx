@@ -54,6 +54,7 @@ const page = () => {
                     let message = response.data.message;
                     setUsernameMessage(message);
                 } catch (error) {
+                    console.log("Error checking the username", error);
                     const axiosError = error as AxiosError<ApiResponse>;
                     let errorMessage = axiosError.response?.data.message;
                     setUsernameMessage(errorMessage ?? "Error checking the username");
