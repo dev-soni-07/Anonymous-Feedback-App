@@ -28,7 +28,7 @@ import { ApiResponse } from "@/types/ApiResponse";
 
 type MessageCardProps = {
     message: Message;
-    onMessageDelete: ({ messageId: string }) => void;
+    onMessageDelete: ({ messageId }: { messageId: string }) => void;
 }
 
 const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
@@ -41,7 +41,7 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
                 title: response.data.message,
             }
         )
-        onMessageDelete(message._id);
+        onMessageDelete({ messageId: message._id as string });
     }
 
     return (
