@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import MessageCard from "@/components/MessageCard";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import axios, { AxiosError } from "axios";
 import { Loader2, RefreshCcw } from "lucide-react";
 import { User } from "next-auth";
 import { useSession } from "next-auth/react";
-import { useCallback, useEffect, useState } from "react";
+import { Key, useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 
@@ -28,7 +28,7 @@ const UserDashboard = () => {
   // Optimistic UI Update
   const handleDeleteMessage = (messageId: string) => {
     setMessages(messages.filter((message) => message._id !== messageId
-    ))
+    ));
   }
 
   const { data: session } = useSession();
@@ -36,7 +36,7 @@ const UserDashboard = () => {
   // Implementing zod
   const form = useForm(
     {
-      resolver: zodResolver(acceptMessageSchema)
+      resolver: zodResolver(acceptMessageSchema),
     }
   )
 
@@ -44,7 +44,7 @@ const UserDashboard = () => {
 
   const acceptMessages = watch('acceptMessages');
 
-  const fetchAcceptMessage = useCallback(async () => {
+  const fetchAcceptMessages = useCallback(async () => {
     setIsSwitchLoading(true);
 
     try {
@@ -79,7 +79,7 @@ const UserDashboard = () => {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Error occurred",
-        description: axiosError.response?.data.message || 'Failed to fetch accept messages status',
+        description: axiosError.response?.data.message || 'Failed to fetch messages',
         variant: "destructive",
       })
     } finally {
@@ -88,11 +88,12 @@ const UserDashboard = () => {
     }
   }, [setIsLoading, setMessages]);
 
+  // Fetch initial state from the server
   useEffect(() => {
     if (!session || !session.user) return;
     fetchAllMessages();
-    fetchAcceptMessage();
-  }, [session, setValue, fetchAcceptMessage, fetchAllMessages]);
+    fetchAcceptMessages();
+  }, [session, setValue, fetchAcceptMessages, fetchAllMessages]);
 
   // Handle switch change
   const handleSwitchChange = async () => {
@@ -119,6 +120,10 @@ const UserDashboard = () => {
     }
   }
 
+  if (!session || !session.user) {
+    return <div>Please login</div>
+  }
+
   const { username } = session?.user as User;
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/user/${username}`;
@@ -126,14 +131,10 @@ const UserDashboard = () => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(profileUrl);
     toast({
-      title: "Copied to clipboard",
-      description: "Your profile link has been copied to clipboard",
+      title: "URL Copied!",
+      description: "Profile URL has been copied to clipboard",
       variant: "default",
     });
-  }
-
-  if (!session || !session.user) {
-    return <div>Please login</div>
   }
 
   return (
@@ -141,7 +142,7 @@ const UserDashboard = () => {
       <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
 
       <div className="mb-4">
-        <h2 className="text-lg font-semibold mb-2">Copy Your Unique Link</h2>{' '}
+        <h2 className="text-lg font-semibold mb-2">Copy Your Profile Link</h2>{' '}
         <div className="flex items-center">
           <input
             type="text"
@@ -184,7 +185,7 @@ const UserDashboard = () => {
         {messages.length > 0 ? (
           messages.map((message, index) => (
             <MessageCard
-              key={message._id}
+              key={message._id as Key}
               message={message}
               onMessageDelete={handleDeleteMessage}
             />

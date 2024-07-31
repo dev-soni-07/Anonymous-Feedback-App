@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     const session = await getServerSession(authOptions);
     const user: User = session?.user as User;
 
-    if (!session || !session.user) {
+    if (!session || !user) {
         return Response.json(
             {
                 success: false,
@@ -31,7 +31,7 @@ export async function GET(request: Request) {
             [
                 {
                     $match: {
-                        id: userId,
+                        _id: userId,
                     }
                 },
                 {
@@ -51,13 +51,13 @@ export async function GET(request: Request) {
                     }
                 },
             ]
-        )
+        ).exec();
 
         if (!user || user.length === 0) {
             return Response.json(
                 {
                     success: false,
-                    message: "No messages found"
+                    message: "User not found"
                 },
                 {
                     status: 404

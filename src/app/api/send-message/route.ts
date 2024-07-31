@@ -19,7 +19,7 @@ export async function POST(request: Request) {
                 {
                     status: 404,
                 }
-            )
+            );
         }
 
         // Is user accepting the messages
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
                 {
                     status: 403,
                 }
-            )
+            );
         }
 
         const newMessage = {
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
             {
                 status: 200,
             }
-        )
+        );
     } catch (error) {
         console.log("Failed to send message", error);
         return Response.json(
@@ -63,6 +63,6 @@ export async function POST(request: Request) {
             {
                 status: 500,
             }
-        )
+        );
     }
 }

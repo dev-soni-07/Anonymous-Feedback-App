@@ -20,7 +20,7 @@ export async function DELETE(request: Request, { params }: { params: { messageid
             {
                 status: 401
             }
-        )
+        );
     }
 
     try {
@@ -47,7 +47,7 @@ export async function DELETE(request: Request, { params }: { params: { messageid
                     status: 404
                 }
             );
-        }
+        };
 
         return Response.json(
             {
@@ -68,6 +68,6 @@ export async function DELETE(request: Request, { params }: { params: { messageid
             {
                 status: 500
             }
-        )
+        );
     }
 }

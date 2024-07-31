@@ -17,14 +17,13 @@ declare module "next-auth" {
             username?: string;
         } & DefaultSession["user"];
     }
-}
+};
 
-// Alternative approach
-// declare module 'next-auth/jwt' {
-//     interface JWT {
-//         _id?: string;
-//         isVerified?: boolean;
-//         isAcceptingMessages?: boolean;
-//         username?: string;
-//     }
-// }
+declare module 'next-auth/jwt' {
+    interface JWT {
+        _id?: string;
+        isVerified?: boolean;
+        isAcceptingMessages?: boolean;
+        username?: string;
+    }
+};

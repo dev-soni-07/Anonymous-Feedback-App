@@ -2,7 +2,6 @@ import dbConnect from "@/lib/dbConnect";
 import { z } from "zod";
 import UserModel from "@/models/User.model";
 import { usernameValidation } from "@/schemas/signUp.schema";
-import { messageSchema } from "@/schemas/message.schema";
 
 const UsernameQuerySchema = z.object(
     {
@@ -12,7 +11,6 @@ const UsernameQuerySchema = z.object(
 
 export async function GET(request: Request) {
     await dbConnect();
-    // http://localhost:3000/api/check-username-unique?username=devsoni071103
 
     try {
         const { searchParams } = new URL(request.url);
@@ -30,12 +28,15 @@ export async function GET(request: Request) {
             return Response.json(
                 {
                     success: false,
-                    message: usernameErrors?.length > 0 ? usernameErrors.join(", ") : "Invalid query parameters",
+                    message:
+                        usernameErrors?.length > 0
+                            ? usernameErrors.join(", ")
+                            : "Invalid query parameters",
                 },
                 {
                     status: 400,
                 }
-            )
+            );
         }
 
         const { username } = result.data;
@@ -51,7 +52,7 @@ export async function GET(request: Request) {
                 {
                     status: 400,
                 }
-            )
+            );
         }
 
         return Response.json(
@@ -62,7 +63,7 @@ export async function GET(request: Request) {
             {
                 status: 200,
             }
-        )
+        );
 
     } catch (error) {
         console.error("Error checking username uniqueness", error);
@@ -75,6 +76,6 @@ export async function GET(request: Request) {
             {
                 status: 500,
             }
-        )
+        );
     }
 }

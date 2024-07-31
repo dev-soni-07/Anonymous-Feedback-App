@@ -41,10 +41,10 @@ export async function POST(request: Request) {
             return Response.json(
                 {
                     success: false,
-                    message: "Failed to update user status to accept messages"
+                    message: "Unable to find user to update message acceptance status"
                 },
                 {
-                    status: 401,
+                    status: 404,
                 }
             )
         }

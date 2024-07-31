@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { Form, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -14,7 +14,7 @@ import * as z from 'zod';
 
 const VerifyAccount = () => {
     const router = useRouter();
-    const param = useParams<{ username: string }>();
+    const params = useParams<{ username: string }>();
     const { toast } = useToast();
 
     // Implementing Zod
@@ -27,7 +27,7 @@ const VerifyAccount = () => {
     const onSubmit = async (data: z.infer<typeof verifySchema>) => {
         try {
             const response = await axios.post('/api/verify-code', {
-                username: param.username,
+                username: params.username,
                 code: data.code,
             });
 
@@ -79,7 +79,7 @@ const VerifyAccount = () => {
                 </Form>
             </div>
         </div>
-    )
+    );
 }
 
 export default VerifyAccount;

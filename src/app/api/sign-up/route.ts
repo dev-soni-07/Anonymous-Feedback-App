@@ -25,10 +25,10 @@ export async function POST(request: Request) {
                 {
                     status: 400
                 }
-            )
+            );
         }
 
-        const existingUserVerifiedByEmail = await UserModel.findOne({ email })
+        const existingUserVerifiedByEmail = await UserModel.findOne({ email });
 
         const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
 
@@ -53,7 +53,6 @@ export async function POST(request: Request) {
             }
         } else {
             const hashedPassword = await bcrypt.hash(password, 10);
-
             const expiryDate = new Date();
             expiryDate.setHours(expiryDate.getHours() + 1);
 

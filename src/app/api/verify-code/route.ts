@@ -1,5 +1,4 @@
 import dbConnect from "@/lib/dbConnect";
-import { z } from "zod";
 import UserModel from "@/models/User.model";
 
 export async function POST(request: Request) {
@@ -10,7 +9,7 @@ export async function POST(request: Request) {
 
         const decodedUsername = decodeURIComponent(username);
 
-        const user = await UserModel.findOne({ username: decodedUsername })
+        const user = await UserModel.findOne({ username: decodedUsername });
 
         if (!user) {
             return Response.json(
@@ -19,9 +18,9 @@ export async function POST(request: Request) {
                     message: "User not found",
                 },
                 {
-                    status: 500,
+                    status: 404,
                 }
-            )
+            );
         }
 
         const isCodeValid = user.verifyCode === code;
@@ -40,17 +39,17 @@ export async function POST(request: Request) {
                 {
                     status: 200,
                 }
-            )
+            );
         } else if (!isCodeNotExpired) {
             return Response.json(
                 {
                     success: false,
-                    message: "Verification code has expired, Please signup again to get a new code",
+                    message: "Verification code has expired, Please sign up again to get a new code",
                 },
                 {
                     status: 400,
                 }
-            )
+            );
         } else {
             return Response.json(
                 {
@@ -60,7 +59,7 @@ export async function POST(request: Request) {
                 {
                     status: 400,
                 }
-            )
+            );
         }
 
     } catch (error) {
@@ -74,6 +73,6 @@ export async function POST(request: Request) {
             {
                 status: 500,
             }
-        )
+        );
     }
 }

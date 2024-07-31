@@ -40,7 +40,7 @@ export async function POST(req: Request) {
             );
         } else {
             // General error handling
-            console.error('An unexpected error occurred:', error);
+            console.error('An unexpected error occurred while generating suggest-messages:', error);
             throw error;
         }
     }

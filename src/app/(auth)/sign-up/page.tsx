@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { ApiResponse } from '@/types/ApiResponse';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -80,10 +80,12 @@ const SignUpForm = () => {
         } catch (error) {
             console.log("Error signing up user", error);
             const axiosError = error as AxiosError<ApiResponse>;
+            let errorMessage = axiosError.response?.data.message;
+            ('There was a problem with your sign-up. Please try again.');
             toast(
                 {
-                    title: "Signup Failed",
-                    description: axiosError.response?.data.message ?? "Error signing up user",
+                    title: "Sign Up Failed",
+                    description: errorMessage,
                     variant: "destructive",
                 }
             );
@@ -97,9 +99,9 @@ const SignUpForm = () => {
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-                        Join Anonymous Feedback App
+                        Join Anonymous Feedback
                     </h1>
-                    <p className="mb-4">Sign up to start your anonymous adventure</p>
+                    <p className="mb-4">Sign Up to start your anonymous adventure</p>
                 </div>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -177,7 +179,7 @@ const SignUpForm = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default SignUpForm;

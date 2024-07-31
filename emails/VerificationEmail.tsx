@@ -38,8 +38,7 @@ export default function VerificationEmail({ username, otp }: VerificationEmailPr
                 </Row>
                 <Row>
                     <Text>
-                        Thank you for registering. Please use the following verification
-                        code to complete your registration:
+                        Thank you for registering. Please use the following verification code to complete your registration:
                     </Text>
                 </Row>
                 <Row>
@@ -50,6 +49,7 @@ export default function VerificationEmail({ username, otp }: VerificationEmailPr
                         If you did not request this code, please ignore this email.
                     </Text>
                 </Row>
+                {/* TODO: Add Button to verify code using the verify-code API */}
                 {/* <Row>
             <Button
               href={`http://localhost:3000/verify/${username}`}
