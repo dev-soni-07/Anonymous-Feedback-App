@@ -29,6 +29,7 @@ const UserDashboard = () => {
   const handleDeleteMessage = (messageId: string) => {
     setMessages(messages.filter((message) => message._id !== messageId
     ));
+    fetchAllMessages();
   }
 
   const { data: session } = useSession();
@@ -60,7 +61,7 @@ const UserDashboard = () => {
     } finally {
       setIsSwitchLoading(false);
     }
-  }, [setValue]);
+  }, [setValue, toast]);
 
   const fetchAllMessages = useCallback(async (refresh: boolean = false) => {
     setIsLoading(true);
@@ -68,7 +69,7 @@ const UserDashboard = () => {
 
     try {
       const response = await axios.get<ApiResponse>('/api/get-messages', {});
-      setMessages(response.data.messages || []);
+      setMessages(response.data.message ?? [] as Message[]);
       if (refresh) {
         toast({
           title: "Refreshed Messages",
@@ -86,14 +87,14 @@ const UserDashboard = () => {
       setIsLoading(false);
       setIsSwitchLoading(false);
     }
-  }, [setIsLoading, setMessages]);
+  }, [setIsLoading, setMessages, toast]);
 
   // Fetch initial state from the server
   useEffect(() => {
     if (!session || !session.user) return;
     fetchAllMessages();
     fetchAcceptMessages();
-  }, [session, setValue, fetchAcceptMessages, fetchAllMessages]);
+  }, [session, setValue, fetchAcceptMessages, fetchAllMessages, toast]);
 
   // Handle switch change
   const handleSwitchChange = async () => {
