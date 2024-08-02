@@ -22,6 +22,7 @@ const UserDashboard = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSwitchLoading, setIsSwitchLoading] = useState<boolean>(false);
+  const [hasFetched, setHasFetched] = useState<boolean>(false);
 
   const { toast } = useToast();
 
@@ -86,12 +87,12 @@ const UserDashboard = () => {
     }
   }, [setIsLoading, setMessages, toast]);
 
-  // Fetch initial state from the server
   useEffect(() => {
-    if (!session || !session.user) return;
+    if (!session || !session.user || hasFetched) return;
     fetchAllMessages();
     fetchAcceptMessages();
-  }, [session, setValue, fetchAcceptMessages, fetchAllMessages, toast]);
+    setHasFetched(true);
+  }, [session, setValue, fetchAcceptMessages, fetchAllMessages, toast, hasFetched]);
 
   // Handle switch change
   const handleSwitchChange = async () => {
@@ -141,78 +142,80 @@ const UserDashboard = () => {
   };
 
   return (
-    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 text-white rounded w-full max-w-6xl">
-      <h1 className="text-4xl font-bold mb-10">My Dashboard</h1>
+    <div className="flex items-center justify-center min-h-screen text-white">
+      <div className="my-8 mx-4 md:mx-6 lg:mx-8 xl:mx-10 p-4 md:p-6 lg:p-8 bg-gray-800 text-white rounded w-full max-w-6xl">
+        <h1 className="text-4xl font-bold mb-10">My Dashboard</h1>
 
-      <div className="mb-4">
-        <h2 className="text-lg font-semibold mb-2 text-slate-100">Copy Your Profile Link</h2>
-        <div className="flex items-center">
-          <input
-            type="text"
-            value={profileUrl}
-            disabled
-            className="input input-bordered w-full p-2 mr-2 text-slate-600 bg-slate-100"
-          />
-          <Button onClick={copyToClipboard} className="bg-slate-700 text-white hover:bg-slate-600">Copy</Button>
-        </div>
-      </div>
-
-      <div className="mb-5 flex flex-row">
-        <Switch
-          {...register('acceptMessages')}
-          checked={acceptMessages}
-          onCheckedChange={handleSwitchChange}
-          disabled={isSwitchLoading}
-        />
-        <span className="ml-2 text-slate-300">
-          Accept Messages: {acceptMessages ? 'On' : 'Off'}
-        </span>
-      </div>
-      <Separator />
-
-      <div className="flex justify-end mt-5">
-        <Button
-          className="bg-slate-700 text-slate-100 hover:bg-slate-600 hover:text-white"
-          variant="outline"
-          onClick={(e) => {
-            e.preventDefault();
-            fetchAllMessages(true);
-          }}
-        >
-          {isLoading ? (
-            <>
-              Loading Messages... &nbsp; <Loader2 className="h-4 w-4 animate-spin" />
-            </>
-          ) : (
-            <>
-              Refresh Messages &nbsp; <RefreshCcw className="h-4 w-4" />
-            </>
-          )}
-        </Button>
-      </div>
-
-      {messages.length > 0 ? (
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {messages.map((message, index) => (
-            <MessageCard
-              key={message._id as Key}
-              message={message}
-              onMessageDelete={handleDeleteMessage}
+        <div className="mb-4 w-full">
+          <h2 className="text-lg font-semibold mb-2 text-slate-100">Copy Your Profile Link</h2>
+          <div className="flex items-center justify-center w-full">
+            <input
+              type="text"
+              value={profileUrl}
+              disabled
+              className="input input-bordered w-full p-2 mr-2 text-slate-600 bg-slate-100"
             />
-          ))}
-        </div>
-      ) : (
-        <div className="flex flex-col items-center justify-center gap-10">
-          <p className="text-slate-300 text-lg">No messages to display</p>
-          <div className="flex flex-col md:flex-row gap-5 items-center justify-center p-5">
-            <p className="text-center md:text-left text-slate-300">Please share your profile link within your network to receive messages</p>
-            <Button onClick={copyToClipboard} className="bg-slate-700 text-white hover:bg-slate-600">
-              Copy Profile Link
-            </Button>
+            <Button onClick={copyToClipboard} className="bg-slate-700 text-white hover:bg-slate-600">Copy</Button>
           </div>
-          <MessageCardCarousel />
         </div>
-      )}
+
+        <div className="mb-5 flex items-center justify-start w-full">
+          <Switch
+            {...register('acceptMessages')}
+            checked={acceptMessages}
+            onCheckedChange={handleSwitchChange}
+            disabled={isSwitchLoading}
+          />
+          <span className="ml-2 text-slate-300">
+            Accept Messages: {acceptMessages ? 'On' : 'Off'}
+          </span>
+        </div>
+        <Separator />
+
+        <div className="flex justify-end mt-5 w-full">
+          <Button
+            className="bg-slate-700 text-slate-100 hover:bg-slate-600 hover:text-white"
+            variant="outline"
+            onClick={(e) => {
+              e.preventDefault();
+              fetchAllMessages(true);
+            }}
+          >
+            {isLoading ? (
+              <>
+                Loading Messages... &nbsp; <Loader2 className="h-4 w-4 animate-spin" />
+              </>
+            ) : (
+              <>
+                Refresh Messages &nbsp; <RefreshCcw className="h-4 w-4" />
+              </>
+            )}
+          </Button>
+        </div>
+
+        {messages.length > 0 ? (
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            {messages.map((message, index) => (
+              <MessageCard
+                key={message._id as Key}
+                message={message}
+                onMessageDelete={handleDeleteMessage}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center gap-10 w-full">
+            <p className="text-slate-300 text-lg">No messages to display</p>
+            <div className="flex flex-col md:flex-row gap-5 items-center justify-center p-5 w-full">
+              <p className="text-center md:text-left text-slate-300">Please share your profile link within your network to receive messages</p>
+              <Button onClick={copyToClipboard} className="bg-slate-700 text-white hover:bg-slate-600">
+                Copy Profile Link
+              </Button>
+            </div>
+            <MessageCardCarousel />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

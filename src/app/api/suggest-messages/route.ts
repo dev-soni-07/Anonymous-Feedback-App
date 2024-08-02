@@ -8,7 +8,7 @@ function getRandomMessages(messages: any[], count: number) {
 
 export async function POST(req: NextRequest) {
     try {
-        const randomMessages = getRandomMessages(suggestMessages, 3);
+        const randomMessages = getRandomMessages(suggestMessages, 5);
         return NextResponse.json({ suggestions: randomMessages });
     } catch (error) {
         console.error('Error generating suggestions:', error);
