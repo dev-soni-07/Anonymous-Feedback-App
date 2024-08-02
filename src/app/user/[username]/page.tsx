@@ -23,10 +23,13 @@ import { ApiResponse } from '@/types/ApiResponse';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { messageSchema } from '@/schemas/message.schema';
+import { useSession } from 'next-auth/react';
 
 const SendMessage = () => {
     const params = useParams<{ username: string }>();
     const username = params.username;
+
+    const { data: session } = useSession();
 
     const form = useForm<z.infer<typeof messageSchema>>({
         resolver: zodResolver(messageSchema),
@@ -173,13 +176,19 @@ const SendMessage = () => {
                         </CardContent>
                     </Card>
                 </div>
-                <Separator className="my-6 bg-slate-600" />
-                <div className="flex flex-row gap-5 items-center justify-center p-5">
-                    <p className="text-slate-300">Get Your Message Dashboard</p>
-                    <Link href={'/sign-up'}>
-                        <Button className="bg-slate-700 text-white hover:bg-slate-600">Create Your Account</Button>
-                    </Link>
-                </div>
+                {
+                    (!session || !session.user) && (
+                        <>
+                            <Separator className="my-6 bg-slate-600" />
+                            <div className="flex flex-row gap-5 items-center justify-center p-5">
+                                <p className="text-slate-300">Get Your Message Dashboard</p>
+                                <Link href={'/sign-up'}>
+                                    <Button className="bg-slate-700 text-white hover:bg-slate-600">Create Your Account</Button>
+                                </Link>
+                            </div>
+                        </>
+                    )
+                }
             </div>
         </div>
     );
