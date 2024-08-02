@@ -1,6 +1,6 @@
 # Anonymous Feedback App
 
-## Overview
+## Introduction
 The Anonymous Feedback App is a robust platform designed to facilitate anonymous communication and feedback exchange. This application enables users to create profiles, share unique links, and receive anonymous feedback and messages. It is built with a scalable, dynamic, and fully responsive architecture, ensuring compatibility across various devices and screen sizes.
 
 ## Features
