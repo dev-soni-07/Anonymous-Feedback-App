@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Anonymous Feedback App
 
-## Getting Started
+## Overview
+The Anonymous Feedback App is a robust platform designed to facilitate anonymous communication and feedback exchange. This application enables users to create profiles, share unique links, and receive anonymous feedback and messages. It is built with a scalable, dynamic, and fully responsive architecture, ensuring compatibility across various devices and screen sizes.
 
-First, run the development server:
+## Features
+- **Dynamic UI:** Leveraging Next.js and React.js for a seamless and interactive user experience.
+- **Responsive Design:** Tailwind CSS ensures the application is visually appealing on all devices.
+- **Scalable Backend:** Powered by MongoDB, providing robust and efficient data handling.
+- **Secure Authentication:** Implemented with NextAuth.js to ensure secure login and user management.
+- **Efficient API Calls:** Axios is used for efficient data fetching and API integration.
+- **Data Validation:** Zod is utilized for schema validation, ensuring data integrity and consistency.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+### Frontend
+- **Next.js:** A powerful React framework for server-side rendering and static site generation.
+- **React.js:** A popular JavaScript library for building user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+- **Shadcn:** A library for accessible and customizable UI components.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Backend
+- **MongoDB:** A NoSQL database for scalable and high-performance data storage.
+- **NextAuth.js:** A library for authentication with support for OAuth, email/password, and more.
+- **Axios:** A promise-based HTTP client for making API requests.
+- **Zod:** A TypeScript-first schema declaration and validation library.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
+### Creating Your Profile
+1. Sign up on the platform and create your profile.
+2. Share your unique profile link with friends, colleagues, or followers.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Receiving Feedback
+1. Receive anonymous feedback and messages through your shared link.
+2. Use the feedback to engage, improve, and grow personally or professionally.
 
-## Learn More
+## Links
+- **Live App:** [Anonymous Feedback App](https://anonymous-feedback-app-devsoni-projects.vercel.app/)
+- **GitHub Repository:** [GitHub Link](https://github.com/your-github-repo/anonymous-feedback-app/)
 
-To learn more about Next.js, take a look at the following resources:
+Feel free to send me anonymous feedback and messages through my profile: [Send Feedback to Dev Soni](https://anonymous-feedback-app-devsoni-projects.vercel.app/user/devsoni)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+For any inquiries or feedback, please contact me at devsoni071103@gmail.com
