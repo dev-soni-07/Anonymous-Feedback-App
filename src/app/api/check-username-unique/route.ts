@@ -20,7 +20,6 @@ export async function GET(request: Request) {
 
         // Validate the query parameters using Zod
         const result = UsernameQuerySchema.safeParse(queryParam);
-        console.log(result); // TODO: To be removed
 
         if (!result.success) {
             const usernameErrors = result.error.format().username?._errors || [];

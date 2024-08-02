@@ -1,17 +1,37 @@
 [
     {
-        "title": "Message from User123",
-        "content": "Hey, how are you doing today?",
+        "title": "Message from @recruiter",
+        "content": "What frameworks are you most comfortable with?",
         "received": "10 minutes ago"
     },
     {
-        "title": "Message from SecretAdmirer",
-        "content": "I really liked your recent post!",
+        "title": "Message from @secret_friend",
+        "content": "Do you prefer working on the front-end or back-end?",
         "received": "2 hours ago"
     },
     {
-        "title": "Message from MysteryGuest",
-        "content": "Do you have any book recommendations?",
+        "title": "Message from @junior",
+        "content": "Can you recommend any good resources for learning React?",
         "received": "1 day ago"
+    },
+    {
+        "title": "Message from @codemaster",
+        "content": "What version control system do you use?",
+        "received": "3 hours ago"
+    },
+    {
+        "title": "Message from @tech_buddy",
+        "content": "How do you stay updated with the latest tech trends?",
+        "received": "5 hours ago"
+    },
+    {
+        "title": "Message from @coding_guy",
+        "content": "What was the last project you worked on?",
+        "received": "12 hours ago"
+    },
+    {
+        "title": "Message from @coder",
+        "content": "Do you have any tips for debugging JavaScript?",
+        "received": "2 days ago"
     }
 ]

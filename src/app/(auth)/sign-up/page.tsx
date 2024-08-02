@@ -96,12 +96,12 @@ const SignUpForm = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-800">
-            <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+            <div className="w-full max-w-max p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-                        Join Anonymous Feedback
+                        Join Us Now
                     </h1>
-                    <p className="mb-4">Sign Up to start your anonymous adventure</p>
+                    <p className="mb-4">Sign Up to begin with your anonymous journey</p>
                 </div>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -113,6 +113,7 @@ const SignUpForm = () => {
                                     <FormLabel>Username</FormLabel>
                                     <Input
                                         {...field}
+                                        placeholder="Enter your username"
                                         onChange={(e) => {
                                             field.onChange(e);
                                             debounced(e.target.value);
@@ -139,8 +140,8 @@ const SignUpForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
-                                    <Input {...field} name="email" />
-                                    <p className='text-muted text-gray-400 text-sm'>We will send you a verification code</p>
+                                    <Input {...field} placeholder="Enter your email" name="email" />
+                                    <p className='text-muted text-gray-500 text-sm'>We will send you a verification code</p>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -152,7 +153,7 @@ const SignUpForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
-                                    <Input type="password" {...field} name="password" />
+                                    <Input type="password" placeholder="Enter your password" {...field} name="password" />
                                     <FormMessage />
                                 </FormItem>
                             )}

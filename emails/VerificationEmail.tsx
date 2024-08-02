@@ -51,13 +51,13 @@ export default function VerificationEmail({ username, otp }: VerificationEmailPr
                 </Row>
                 {/* TODO: Add Button to verify code using the verify-code API */}
                 {/* <Row>
-            <Button
-              href={`http://localhost:3000/verify/${username}`}
-              style={{ color: '#61dafb' }}
-            >
-              Verify here
-            </Button>
-          </Row> */}
+                    <Button
+                        href={`http://localhost:3000/verify/${username}`}
+                        style={{ color: '#61dafb' }}
+                    >
+                        Verify here
+                    </Button>
+                </Row> */}
             </Section>
         </Html>
     );

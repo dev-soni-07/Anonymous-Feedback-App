@@ -51,12 +51,12 @@ const LoginForm = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-800">
-            <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+            <div className="w-full max-w-max p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-                        Welcome Back to Anonymous Feedback
+                        Welcome Back
                     </h1>
-                    <p className="mb-4">Login to continue your secret conversations</p>
+                    <p className="mb-4">Login to continue your anonymous conversations</p>
                 </div>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -66,7 +66,7 @@ const LoginForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Email/Username</FormLabel>
-                                    <Input {...field} />
+                                    <Input {...field} placeholder="Enter your email/username" />
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -77,7 +77,7 @@ const LoginForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
-                                    <Input type="password" {...field} />
+                                    <Input type="password" {...field} placeholder="Enter your password" />
                                     <FormMessage />
                                 </FormItem>
                             )}

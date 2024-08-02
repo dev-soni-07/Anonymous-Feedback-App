@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Loader2 } from 'lucide-react';
+import { Loader2, RefreshCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { CardHeader, CardContent, Card } from '@/components/ui/card';
@@ -90,8 +90,8 @@ const SendMessage = () => {
     };
 
     return (
-        <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
-            <h1 className="text-4xl font-bold mb-6 text-center">
+        <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 text-white rounded w-full max-w-6xl">
+            <h1 className="text-4xl font-bold mb-10">
                 Public Profile Link
             </h1>
             <Form {...form}>
@@ -101,11 +101,11 @@ const SendMessage = () => {
                         name="content"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Send Anonymous Message to @{username}</FormLabel>
+                                <FormLabel className="text-lg font-semibold mb-2 text-slate-100 mb-5">Send Anonymous Message to @{username}</FormLabel>
                                 <FormControl>
                                     <Textarea
-                                        placeholder="Write your anonymous message here"
-                                        className="resize-none"
+                                        placeholder="Start writing a anonymous message here"
+                                        className="resize-none bg-slate-800 text-slate-300"
                                         {...field}
                                     />
                                 </FormControl>
@@ -115,13 +115,13 @@ const SendMessage = () => {
                     />
                     <div className="flex justify-center">
                         {isLoading ? (
-                            <Button disabled>
+                            <Button disabled className="bg-slate-700 text-white hover:bg-slate-600">
                                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                                 Please wait...
                             </Button>
                         ) : (
-                            <Button type="submit" disabled={isLoading || !messageContent}>
-                                Send It
+                            <Button type="submit" disabled={isLoading || !messageContent} className="bg-slate-700 text-white hover:bg-slate-600">
+                                Send Message
                             </Button>
                         )}
                     </div>
@@ -130,32 +130,39 @@ const SendMessage = () => {
 
             <div className="space-y-4 my-8">
                 <div className="space-y-2">
-                    <Button
-                        onClick={fetchSuggestedMessages}
-                        className="my-4"
-                        disabled={isSuggestLoading}
-                    >
-                        {isSuggestLoading ? (
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        ) : (
-                            'Suggest Messages'
-                        )}
-                    </Button>
-                    <p>Click on any message below to select it.</p>
+                    <div className="flex justify-end mt-5">
+                        <Button
+                            onClick={fetchSuggestedMessages}
+                            className="bg-slate-700 text-slate-100 hover:bg-slate-600 hover:text-white"
+                            variant="outline"
+                            disabled={isSuggestLoading}
+                        >
+                            {isSuggestLoading ? (
+                                <>
+                                    Loading Messages... &nbsp; <Loader2 className="h-4 w-4 animate-spin" />
+                                </>
+                            ) : (
+                                <>
+                                    Suggest Messages &nbsp; <RefreshCcw className="h-4 w-4" />
+                                </>
+                            )}
+                        </Button>
+                    </div>
+                    <p className="text-slate-400">Click on any message below to select it.</p>
                 </div>
-                <Card>
+                <Card className="bg-slate-800">
                     <CardHeader>
-                        <h3 className="text-xl font-semibold">Messages</h3>
+                        <h3 className="text-xl font-semibold text-slate-200">Suggested Messages</h3>
                     </CardHeader>
                     <CardContent className="flex flex-col space-y-4">
                         {suggestedMessages.length === 0 ? (
-                            <p>No suggestions available</p>
+                            <p className="text-slate-400">No suggestions available</p>
                         ) : (
                             suggestedMessages.map(({ messageId, messageText }) => (
                                 <Button
                                     key={messageId}
                                     variant="outline"
-                                    className="mb-2"
+                                    className="bg-slate-700 text-slate-100 hover:bg-slate-600 hover:text-white"
                                     onClick={() => handleMessageClick(messageText)}
                                 >
                                     {messageText}
@@ -165,11 +172,11 @@ const SendMessage = () => {
                     </CardContent>
                 </Card>
             </div>
-            <Separator className="my-6" />
-            <div className="text-center">
-                <div className="mb-4">Get Your Message Board</div>
+            <Separator className="my-6 bg-slate-600" />
+            <div className="flex flex-row gap-5 items-center justify-center p-5">
+                <p className="text-slate-300">Get Your Message Dashboard</p>
                 <Link href={'/sign-up'}>
-                    <Button>Create Your Account</Button>
+                    <Button className="bg-slate-700 text-white hover:bg-slate-600">Create Your Account</Button>
                 </Link>
             </div>
         </div>
