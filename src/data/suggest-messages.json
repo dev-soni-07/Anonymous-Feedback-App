@@ -1,0 +1,402 @@
+[
+    {
+        "messageId": "a1B2$c3D",
+        "messageText": "What's a hobby you've recently started?"
+    },
+    {
+        "messageId": "e4F5@g6H",
+        "messageText": "If you could have dinner with any historical figure, who would it be?"
+    },
+    {
+        "messageId": "i7J8#k9L",
+        "messageText": "What's a simple thing that makes you happy?"
+    },
+    {
+        "messageId": "m0N1$p2Q",
+        "messageText": "What's your favorite book and why?"
+    },
+    {
+        "messageId": "r3S4#t5U",
+        "messageText": "What's the best piece of advice you've ever received?"
+    },
+    {
+        "messageId": "v6W7$x8Y",
+        "messageText": "What's your dream travel destination?"
+    },
+    {
+        "messageId": "z9A0#b1C",
+        "messageText": "If you could learn any skill instantly, what would it be?"
+    },
+    {
+        "messageId": "d2E3$f4G",
+        "messageText": "What's your favorite way to spend a weekend?"
+    },
+    {
+        "messageId": "h5I6#j7K",
+        "messageText": "What's one thing you can't live without?"
+    },
+    {
+        "messageId": "l8M9$n0O",
+        "messageText": "If you could have any superpower, what would it be?"
+    },
+    {
+        "messageId": "p1Q2#r3S",
+        "messageText": "What's your favorite season and why?"
+    },
+    {
+        "messageId": "t4U5$v6W",
+        "messageText": "What's your favorite childhood memory?"
+    },
+    {
+        "messageId": "x7Y8#z9A",
+        "messageText": "If you could have any job for a day, what would it be?"
+    },
+    {
+        "messageId": "b0C1$d2E",
+        "messageText": "What's your favorite movie?"
+    },
+    {
+        "messageId": "f3G4#h5I",
+        "messageText": "Do you have any pets?"
+    },
+    {
+        "messageId": "j6K7$l8M",
+        "messageText": "What's your dream job?"
+    },
+    {
+        "messageId": "n9O0#p1Q",
+        "messageText": "What's the most interesting place you've ever visited?"
+    },
+    {
+        "messageId": "r2S3$t4U",
+        "messageText": "If you could meet any celebrity, who would it be?"
+    },
+    {
+        "messageId": "v5W6#x7Y",
+        "messageText": "What's your favorite way to relax?"
+    },
+    {
+        "messageId": "z8A9$b0C",
+        "messageText": "What's your favorite holiday and why?"
+    },
+    {
+        "messageId": "d1E2#f3G",
+        "messageText": "What's one goal you have for this year?"
+    },
+    {
+        "messageId": "h4I5$j6K",
+        "messageText": "What's your favorite type of music?"
+    },
+    {
+        "messageId": "l7M8$n9O",
+        "messageText": "If you could live in any time period, which one would you choose?"
+    },
+    {
+        "messageId": "p0Q1#r2S",
+        "messageText": "What's your favorite outdoor activity?"
+    },
+    {
+        "messageId": "t3U4$v5W",
+        "messageText": "What's your favorite food?"
+    },
+    {
+        "messageId": "x6Y7#z8A",
+        "messageText": "What's your favorite drink?"
+    },
+    {
+        "messageId": "b9C0$d1E",
+        "messageText": "What's your favorite color?"
+    },
+    {
+        "messageId": "f2G3#h4I",
+        "messageText": "What's the best concert you've ever been to?"
+    },
+    {
+        "messageId": "j5K6$l7M",
+        "messageText": "What's your favorite TV show?"
+    },
+    {
+        "messageId": "n8O9#p0Q",
+        "messageText": "If you could have any animal as a pet, what would it be?"
+    },
+    {
+        "messageId": "r1S2$t3U",
+        "messageText": "What's your favorite app on your phone?"
+    },
+    {
+        "messageId": "v4W5#x6Y",
+        "messageText": "What's your favorite way to stay active?"
+    },
+    {
+        "messageId": "z7A8$b9C",
+        "messageText": "What's your favorite dessert?"
+    },
+    {
+        "messageId": "d0E1#f2G",
+        "messageText": "What's your favorite type of weather?"
+    },
+    {
+        "messageId": "h3I4$j5K",
+        "messageText": "If you could visit any planet, which one would you choose?"
+    },
+    {
+        "messageId": "l6M7$n8O",
+        "messageText": "What's your favorite book genre?"
+    },
+    {
+        "messageId": "p9Q0#r1S",
+        "messageText": "What's one thing you wish you could change about the world?"
+    },
+    {
+        "messageId": "t2U3$v4W",
+        "messageText": "What's your favorite thing to cook?"
+    },
+    {
+        "messageId": "x5Y6#z7A",
+        "messageText": "What's the most memorable birthday you've had?"
+    },
+    {
+        "messageId": "b8C9$d0E",
+        "messageText": "If you could learn another language, which one would it be?"
+    },
+    {
+        "messageId": "f1G2#h3I",
+        "messageText": "What's your favorite way to start the day?"
+    },
+    {
+        "messageId": "j4K5$l6M",
+        "messageText": "What's your favorite sport to watch?"
+    },
+    {
+        "messageId": "n7O8#p9Q",
+        "messageText": "What's your favorite sport to play?"
+    },
+    {
+        "messageId": "r0S1$t2U",
+        "messageText": "What's your favorite quote?"
+    },
+    {
+        "messageId": "v3W4#x5Y",
+        "messageText": "What's your favorite thing about yourself?"
+    },
+    {
+        "messageId": "z6A7$b8C",
+        "messageText": "If you could have a conversation with anyone, living or dead, who would it be?"
+    },
+    {
+        "messageId": "d9E0#f1G",
+        "messageText": "What's your favorite subject to learn about?"
+    },
+    {
+        "messageId": "h2I3$j4K",
+        "messageText": "What's your favorite time of day?"
+    },
+    {
+        "messageId": "l5M6$n7O",
+        "messageText": "What's your favorite way to spend a rainy day?"
+    },
+    {
+        "messageId": "p8Q9#r0S",
+        "messageText": "What's your favorite thing to do with friends?"
+    },
+    {
+        "messageId": "t1U2$v3W",
+        "messageText": "What's your favorite kind of art?"
+    },
+    {
+        "messageId": "x4Y5#z6A",
+        "messageText": "What's your favorite way to give back to the community?"
+    },
+    {
+        "messageId": "b7C8$d9E",
+        "messageText": "What's your favorite way to stay motivated?"
+    },
+    {
+        "messageId": "f0G1#h2I",
+        "messageText": "What's your favorite way to unwind after a long day?"
+    },
+    {
+        "messageId": "j3K4$l5M",
+        "messageText": "What's your favorite holiday tradition?"
+    },
+    {
+        "messageId": "n6O7#p8Q",
+        "messageText": "What's your favorite thing about your hometown?"
+    },
+    {
+        "messageId": "r9S0$t1U",
+        "messageText": "What's your favorite thing about traveling?"
+    },
+    {
+        "messageId": "v2W3#x4Y",
+        "messageText": "What's your favorite way to stay connected with loved ones?"
+    },
+    {
+        "messageId": "z5A6$b7C",
+        "messageText": "What's your favorite thing to do on a day off?"
+    },
+    {
+        "messageId": "d8E9#f0G",
+        "messageText": "What's your favorite thing to do on a road trip?"
+    },
+    {
+        "messageId": "h1I2$j3K",
+        "messageText": "What's your favorite kind of music?"
+    },
+    {
+        "messageId": "l4M5$n6O",
+        "messageText": "What's your favorite thing to do in nature?"
+    },
+    {
+        "messageId": "p7Q8#r9S",
+        "messageText": "What's your favorite thing to do when you're feeling creative?"
+    },
+    {
+        "messageId": "t0U1$v2W",
+        "messageText": "What's your favorite way to relax on the weekend?"
+    },
+    {
+        "messageId": "x3Y4#z5A",
+        "messageText": "What's your favorite kind of movie?"
+    },
+    {
+        "messageId": "b6C7$d8E",
+        "messageText": "What's your favorite way to stay healthy?"
+    },
+    {
+        "messageId": "f9G0#h1I",
+        "messageText": "What's your favorite way to spend time with family?"
+    },
+    {
+        "messageId": "j2K3$l4M",
+        "messageText": "What's your favorite thing to do in your free time?"
+    },
+    {
+        "messageId": "n5O6#p7Q",
+        "messageText": "What's your favorite way to spend a summer day?"
+    },
+    {
+        "messageId": "r8S9$t0U",
+        "messageText": "What's your favorite way to celebrate a special occasion?"
+    },
+    {
+        "messageId": "v1W2#x3Y",
+        "messageText": "What's your favorite thing to do when you want to have fun?"
+    },
+    {
+        "messageId": "z4A5$b6C",
+        "messageText": "What's your favorite way to stay positive?"
+    },
+    {
+        "messageId": "d7E8#f9G",
+        "messageText": "What's your favorite way to express yourself?"
+    },
+    {
+        "messageId": "h0I1$j2K",
+        "messageText": "What's your favorite thing to do on a rainy day?"
+    },
+    {
+        "messageId": "l3M4$n5O",
+        "messageText": "What's your favorite way to spend a holiday?"
+    },
+    {
+        "messageId": "p6Q7#r8S",
+        "messageText": "What's your favorite way to learn something new?"
+    },
+    {
+        "messageId": "t9U0$v1W",
+        "messageText": "What's your favorite way to challenge yourself?"
+    },
+    {
+        "messageId": "x2Y3#z4A",
+        "messageText": "What's your favorite way to stay organized?"
+    },
+    {
+        "messageId": "b5C6$d7E",
+        "messageText": "What's your favorite way to spend time alone?"
+    },
+    {
+        "messageId": "f8G9#h0I",
+        "messageText": "What's your favorite thing to do with friends on the weekend?"
+    },
+    {
+        "messageId": "j1K2$l3M",
+        "messageText": "What's your favorite thing to do on a Friday night?"
+    },
+    {
+        "messageId": "n4O5#p6Q",
+        "messageText": "What's your favorite way to celebrate a birthday?"
+    },
+    {
+        "messageId": "r7S8$t9U",
+        "messageText": "What's your favorite way to stay entertained?"
+    },
+    {
+        "messageId": "v0W1#x2Y",
+        "messageText": "What's your favorite way to spend a winter day?"
+    },
+    {
+        "messageId": "z3A4$b5C",
+        "messageText": "What's your favorite way to spend a spring day?"
+    },
+    {
+        "messageId": "d6E7#f8G",
+        "messageText": "What's your favorite way to spend an autumn day?"
+    },
+    {
+        "messageId": "h9I0$j1K",
+        "messageText": "What's your favorite way to stay fit?"
+    },
+    {
+        "messageId": "l2M3$n4O",
+        "messageText": "What's your favorite way to stay hydrated?"
+    },
+    {
+        "messageId": "p5Q6#r7S",
+        "messageText": "What's your favorite way to stay cool in the summer?"
+    },
+    {
+        "messageId": "t8U9$v0W",
+        "messageText": "What's your favorite way to stay warm in the winter?"
+    },
+    {
+        "messageId": "x1Y2#z3A",
+        "messageText": "What's your favorite thing about your best friend?"
+    },
+    {
+        "messageId": "b4C5$d6E",
+        "messageText": "What's your favorite thing about your family?"
+    },
+    {
+        "messageId": "f7G8#h9I",
+        "messageText": "What's your favorite thing about your job?"
+    },
+    {
+        "messageId": "j0K1$l2M",
+        "messageText": "What's your favorite thing about your school?"
+    },
+    {
+        "messageId": "n3O4#p5Q",
+        "messageText": "What's your favorite thing about your city?"
+    },
+    {
+        "messageId": "r6S7$t8U",
+        "messageText": "What's your favorite thing about your country?"
+    },
+    {
+        "messageId": "v9W0#x1Y",
+        "messageText": "What's your favorite way to spend a Sunday?"
+    },
+    {
+        "messageId": "z2A3$b4C",
+        "messageText": "What's your favorite way to spend a Saturday?"
+    },
+    {
+        "messageId": "d5E6#f7G",
+        "messageText": "What's your favorite thing to do on a holiday?"
+    },
+    {
+        "messageId": "h8I9$j0K",
+        "messageText": "What's your favorite thing to do with your family on vacation?"
+    }
+]
