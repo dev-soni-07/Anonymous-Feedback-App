@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
             {
                 error: 'Error generating suggestions',
-                details: error.message,
+                details: (error as Error).message,
             },
             {
                 status: 500,

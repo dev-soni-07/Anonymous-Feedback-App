@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]/options";
 import dbConnect from "@/lib/dbConnect";
-import UserModel from "@/models/User.model";
+import UserModel, { Message } from "@/models/User.model";
 import { User } from "next-auth";
 import mongoose from "mongoose";
 
@@ -71,7 +71,7 @@ export async function GET(request: Request) {
         return Response.json(
             {
                 success: true,
-                message: user[0]?.messages
+                message: user[0]?.messages as Message[]
             },
             {
                 status: 200

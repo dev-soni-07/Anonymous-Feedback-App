@@ -27,7 +27,7 @@ const UserDashboard = () => {
   const { toast } = useToast();
 
   // Optimistic UI Update
-  const handleDeleteMessage = (messageId: string) => {
+  const handleDeleteMessage = (messageId: unknown) => {
     setMessages(messages.filter((message) => message._id !== messageId));
     fetchAllMessages();
   };
@@ -67,7 +67,8 @@ const UserDashboard = () => {
 
     try {
       const response = await axios.get<ApiResponse>('/api/get-messages', {});
-      setMessages(response.data.message ?? [] as Message[]);
+      let result = response.data.message ?? [];
+      setMessages(result as unknown as Message[]);
       if (refresh) {
         toast({
           title: "Refreshed Messages",
