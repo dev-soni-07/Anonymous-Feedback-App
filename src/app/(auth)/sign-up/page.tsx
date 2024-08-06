@@ -76,7 +76,8 @@ const SignUpForm = () => {
                     description: response.data.message,
                 }
             );
-            router.replace(`/verify/${username}`);
+            // router.replace(`/verify/${username}`);
+            router.replace('/login');
         } catch (error) {
             console.log("Error signing up user", error);
             const axiosError = error as AxiosError<ApiResponse>;
@@ -141,7 +142,7 @@ const SignUpForm = () => {
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <Input {...field} placeholder="Enter your email" name="email" />
-                                    <p className='text-gray-700 text-sm'>We will send you a verification code</p>
+                                    {/* <p className='text-gray-700 text-sm'>We will send you a verification code</p> */}
                                     <FormMessage />
                                 </FormItem>
                             )}

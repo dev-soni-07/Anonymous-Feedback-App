@@ -9,10 +9,15 @@ export async function POST(request: Request) {
     try {
         const { username, email, password } = await request.json();
 
+        // const existingUserVerifiedByUsername = await UserModel.findOne(
+        //     {
+        //         username,
+        //         isVerified: true,
+        //     }
+        // )
         const existingUserVerifiedByUsername = await UserModel.findOne(
             {
                 username,
-                isVerified: true,
             }
         )
 
@@ -33,7 +38,8 @@ export async function POST(request: Request) {
         const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
 
         if (existingUserVerifiedByEmail) {
-            if (existingUserVerifiedByEmail.isVerified) {
+            // if (existingUserVerifiedByEmail.isVerified) {
+            if (true) {
                 return Response.json(
                     {
                         success: false,
@@ -94,7 +100,8 @@ export async function POST(request: Request) {
         return Response.json(
             {
                 success: true,
-                message: "User registered successfully. Please verify your email.",
+                // message: "User registered successfully. Please verify your email.",
+                message: "User registered successfully. Please login.",
             },
             {
                 status: 201,

@@ -29,10 +29,10 @@ export const authOptions: NextAuthOptions = {
                         throw new Error("User not found with this email or username");
                     }
 
-                    if (!user.isVerified) {
-                        console.error("User not verified");
-                        throw new Error("Please verify your account first");
-                    }
+                    // if (!user.isVerified) {
+                    //     console.error("User not verified");
+                    //     throw new Error("Please verify your account first");
+                    // }
 
                     const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
 
@@ -57,7 +57,7 @@ export const authOptions: NextAuthOptions = {
         async jwt({ token, user }) {
             if (user) {
                 token.id = user._id?.toString();
-                token.isVerified = user.isVerified;
+                // token.isVerified = user.isVerified;
                 token.isAcceptingMessage = user.isAcceptingMessage;
                 token.username = user.username;
             }
@@ -67,7 +67,7 @@ export const authOptions: NextAuthOptions = {
         async session({ session, token }) {
             if (token) {
                 session.user._id = token.id as string;
-                session.user.isVerified = token.isVerified as boolean;
+                // session.user.isVerified = token.isVerified as boolean;
                 session.user.isAcceptingMessage = token.isAcceptingMessage as boolean;
                 session.user.username = token.username as string;
             }
